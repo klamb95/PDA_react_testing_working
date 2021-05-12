@@ -51,5 +51,19 @@ describe('Calculator', () => {
         fireEvent.click(equals);
         expect(runningTotal).toHaveTextContent('24');
         });
+
+        it('should divide two numbers together', () => {
+          const button2 = container.getByTestId('number2');
+          const button6 = container.getByTestId('number6');
+          const divide = container.getByTestId('divide');
+          const equals = container.getByTestId('equals');
+          const runningTotal = container.getByTestId('running-total');
+          fireEvent.click(button6);
+          fireEvent.click(divide);
+          fireEvent.click(button2);
+          fireEvent.click(equals);
+          expect(runningTotal).toHaveTextContent('3');
+          });
+      
 })
 
