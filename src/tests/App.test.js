@@ -91,6 +91,24 @@ describe('Calculator', () => {
               });
 
 
+              it('should clear the running total without affecting the calculation', () => {
+                const button1 = container.getByTestId('number1');
+                const button4 = container.getByTestId('number4');
+                const add = container.getByTestId('add');
+                const equals = container.getByTestId('equals');
+                const clear = container.getByTestId('clear')
+                const runningTotal = container.getByTestId('running-total');
+                fireEvent.click(button1);
+                fireEvent.click(add);
+                fireEvent.click(button1);
+                fireEvent.click(clear);
+                fireEvent.click(button4)
+                fireEvent.click(equals);
+                expect(runningTotal).toHaveTextContent('5');
+                });
+  
+
+
       
 })
 
