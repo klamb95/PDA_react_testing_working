@@ -64,6 +64,18 @@ describe('Calculator', () => {
           fireEvent.click(equals);
           expect(runningTotal).toHaveTextContent('3');
           });
+
+
+          it('should divide two numbers together', () => {
+            const button2 = container.getByTestId('number2');
+            const button6 = container.getByTestId('number6');
+            const runningTotal = container.getByTestId('running-total');
+            fireEvent.click(button6);
+            fireEvent.click(button2);
+            fireEvent.click(button2);
+            expect(runningTotal).toHaveTextContent('622');
+            });
+
       
 })
 
