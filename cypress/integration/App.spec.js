@@ -13,4 +13,15 @@ describe("Calculator", () => {
     cy.get('#number4').click();
     cy.get('.display').should('contain', '24')
   })
+
+  it('should show the result of an operation', ()=>{
+    cy.get('#number1').click();
+    cy.get('#operator_add').click();
+    cy.get('#number2').click();
+    cy.get('#operator_equals').click();
+    cy.get('.display').should('contain', '3');
+  })
+
+  
+
 })
