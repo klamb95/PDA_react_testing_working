@@ -24,6 +24,19 @@ describe('Calculator', () => {
     fireEvent.click(button1);
     fireEvent.click(equals);
     expect(runningTotal).toHaveTextContent('2');
-    })
+    });
+
+    it('should subtract two numbers together', () => {
+      const button1 = container.getByTestId('number1');
+      const button2 = container.getByTestId('number2');
+      const subtract = container.getByTestId('subtract');
+      const equals = container.getByTestId('equals');
+      const runningTotal = container.getByTestId('running-total');
+      fireEvent.click(button2);
+      fireEvent.click(subtract);
+      fireEvent.click(button1);
+      fireEvent.click(equals);
+      expect(runningTotal).toHaveTextContent('1');
+      });
 })
 
