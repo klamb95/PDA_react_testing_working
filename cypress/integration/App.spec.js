@@ -73,7 +73,13 @@ describe("Calculator", () => {
     cy.get('.display').should('contain', '50000');
   });
 
-  it('should deal with divide by zero')
+  it('should deal with divide by zero', ()=>{
+    cy.get('#number5').click();
+    cy.get('#operator_divide').click();
+    cy.get('#number0');
+    cy.get('#operator_equals').click();
+    cy.get('.display').should('contain', 'NaN');
+  })
 
 
 
