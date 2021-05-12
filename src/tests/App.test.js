@@ -38,5 +38,18 @@ describe('Calculator', () => {
       fireEvent.click(equals);
       expect(runningTotal).toHaveTextContent('1');
       });
+
+      it('should multiply two numbers together', () => {
+        const button4 = container.getByTestId('number4');
+        const button6 = container.getByTestId('number6');
+        const multiply = container.getByTestId('multiply');
+        const equals = container.getByTestId('equals');
+        const runningTotal = container.getByTestId('running-total');
+        fireEvent.click(button4);
+        fireEvent.click(multiply);
+        fireEvent.click(button6);
+        fireEvent.click(equals);
+        expect(runningTotal).toHaveTextContent('24');
+        });
 })
 
