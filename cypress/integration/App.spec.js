@@ -22,6 +22,17 @@ describe("Calculator", () => {
     cy.get('.display').should('contain', '3');
   })
 
+  it('should add multiple operations together', ()=>{
+    cy.get('#number1').click();
+    cy.get('#operator_add').click();
+    cy.get('#number1').click();
+    cy.get('#operator_add').click();
+    cy.get('#number1').click();
+    cy.get('#operator_equals').click();
+    cy.get('.display').should('contain', '2');
+  })
+
+
   
 
 })
