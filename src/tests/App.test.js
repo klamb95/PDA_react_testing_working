@@ -75,7 +75,7 @@ describe('Calculator', () => {
             fireEvent.click(button2);
             expect(runningTotal).toHaveTextContent('622');
             });
-
+            // code only adds the first two numbers
             it('should chain multiple operations together', () => {
               const button1 = container.getByTestId('number1');
               const add = container.getByTestId('add');

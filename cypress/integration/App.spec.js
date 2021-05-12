@@ -21,7 +21,7 @@ describe("Calculator", () => {
     cy.get('#operator_equals').click();
     cy.get('.display').should('contain', '3');
   })
-
+// code only adds the first two numbers
   it('should add multiple operations together', ()=>{
     cy.get('#number1').click();
     cy.get('#operator_add').click();
